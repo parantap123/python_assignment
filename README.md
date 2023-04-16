@@ -2,13 +2,13 @@
 
 
 # Tech stack 
-Python: The programming language used for the entire project.
-Flask: A lightweight web framework for building API services in Python.
-Flask-MySQLdb: A Flask extension that provides a simple interface for connecting to MySQL databases.
-MySQL: The relational database management system used for storing data.
-Docker: A platform for developing, shipping, and running applications in containers.
-Docker Compose: A tool for defining and running multi-container Docker applications.
-In addition to these, I am also using the requests library for making HTTP requests to the AlphaVantage API, and datetime for handling date and time operations.
+Python: The programming language used for the entire project.<br />
+Flask: A lightweight web framework for building API services in Python.<br />
+Flask-MySQLdb: A Flask extension that provides a simple interface for connecting to MySQL databases.<br />
+MySQL: The relational database management system used for storing data.<br />
+Docker: A platform for developing, shipping, and running applications in containers.<br />
+Docker Compose: A tool for defining and running multi-container Docker applications.<br />
+In addition to these, I am also using the requests library for making HTTP requests to the AlphaVantage API, and datetime for handling date and time operations.<br />
 
 # steps to run the code in the local enviroment
 run this ```docker-compose up --build``` in the mail directory of the project where docker-compose.yml is present
