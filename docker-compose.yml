@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5004:5004"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=mysecretpassword
+      - MYSQL_DATABASE=mydatabase
+      - ALPHAVANTAGE_API_KEY=TP5UAHW5EJ5WDW5X
+    depends_on:
+      - db
+
+  db:
+    image: "mysql:8.0"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysecretpassword
+      - MYSQL_DATABASE=mydatabase
+     
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql

@@ -1,12 +1,17 @@
-# Take-Home Assignment
+# Description
 
-The goal of this take-home assignment is to evaluate your abilities to use API, data processing and transformation, SQL, and implement a new API service in Python.
 
-You should first fork this repository, and then send us the code or the url of your forked repository via email.
+# Tech stack 
+Python: The programming language used for the entire project.
+Flask: A lightweight web framework for building API services in Python.
+Flask-MySQLdb: A Flask extension that provides a simple interface for connecting to MySQL databases.
+MySQL: The relational database management system used for storing data.
+Docker: A platform for developing, shipping, and running applications in containers.
+Docker Compose: A tool for defining and running multi-container Docker applications.
+In addition to these, I am also using the requests library for making HTTP requests to the AlphaVantage API, and datetime for handling date and time operations.
 
-**Please do not submit any pull requests to this repository.**
-
-You need to perform the following **Two** tasks:
+# steps to run the code in the local enviroment
+run this ```docker-compose up --build``` in the mail directory of the project where docker-compose.yml is present
 
 ## Task1
 ### Problem Statement:
