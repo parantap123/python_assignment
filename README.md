@@ -24,7 +24,7 @@ In addition to these, I am also using the requests library for making HTTP reque
 
 To run the project, you don't need to install anything other than Docker Engine. Follow the steps below to run the project:
 
-1. Ensure that Docker Engine is installed on your system. If not, please refer to the official documentation to install Docker Engine. link to the website ``` https://docs.docker.com/engine/install/ ```
+1. Ensure that Docker Engine is installed on your system. If not, please refer to the official documentation to install Docker Engine. link to the website  https://docs.docker.com/engine/install/ 
 2. Clone the repository to your local system.
 3. Open a terminal/command prompt and navigate to the project's root directory.
 4. Run the following command: ``` docker-compose up --build ```
@@ -41,13 +41,13 @@ This task will do the following:
 ### The way to use the API:
 ```curl -X POST  'http://127.0.0.1:5004/api/fetch_data'```<br />
 ***please run this API first so as to populate the data in the DB***
-This was done as an API as it would make it easier for the evaluater to run the API multiple times tro check if the duplicate records are inserted into the DB
+This was done as an API as it would make it easier for the evaluater to run the API multiple times to check if the duplicate records are inserted into the DB
 
 ## Task2
 
 ### part 1
  This task will do the following : <br />
- 1. retrieve records from financial_data table with input paramentres **start_date**, **end_date**, **symbol**, **limit** and **page**  all the parametres are **optional** if limit is not given then the default values is taken to be 5 and if page is not given then the default values is taken to be 1.
+ 1. retrieve records from financial_data table with input paramentres **start_date**, **end_date**, **symbol**, **limit** and **page**  all the parametres are **optional**. If limit is not given then the default values is taken to be 5 and if page is not given then the default values is taken to be 1.
  2. It will provide the data , pagination and info 
 #### The way to use the API:
 ```curl -X GET 'http://localhost:5004/api/financial_data?start_date=2023-04-10&end_date=2023-04-14&page=1&limit=2'```
@@ -117,6 +117,6 @@ This task will do the following : <br />
 
 # Secret Key storage explanation
 
-**Local** :I am setting the key in the enviroment variables of the server<br />
-**Production** : Use secret management services provided by AWS Secrets Manager.It will protect access to our application API_KEY<br />
+**Local** :In the local development environment, the API key is set up as an environment variable in the docker-compose.yml file. This approach ensures that the key is easily accessible during development while keeping it separate from the application code.<br />
+**Production** : In production, I will utilize AWS Secrets Manager to securely store and manage our API keys. This ensures that sensitive information is protected and can be easily rotated or updated as needed.
 
