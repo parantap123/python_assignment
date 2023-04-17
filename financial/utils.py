@@ -7,7 +7,7 @@ def calculate_statistics(data,start_date,end_date,symbol):
     average_daily_open_price = 0
     average_daily_close_price = 0
     average_daily_volume = 0
-    info = {}
+    info = {"error":""}
     statistics_data = {"start_date":start_date,"end_date":end_date,"symbol":symbol,"average_daily_open_price":average_daily_open_price,"average_daily_close_price":average_daily_close_price,"average_daily_volume":average_daily_volume}
     
     #check if the data is not empty if its empty then the averages are 0
