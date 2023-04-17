@@ -1,5 +1,12 @@
 # Description
+This project is a financial data analysis  application that retrieves stock market data from AlphaVantage API and stores it in a MySQL database. The application is built using Python and the Flask web framework. The application allows users to query the stored financial data through a set of RESTful APIs.
 
+Key features of the project include:
+
+Retrieval of historical financial data from AlphaVantage API for specific stock symbols (IBM and Apple Inc.).<br />
+Storage of the retrieved data in a MySQL database using Docker Compose for easy setup and deployment.<br />
+Implementation of APIs to fetch financial data and perform statistical analysis within specified date ranges and stock symbols.<br />
+Error handling and logging to ensure smooth operation and easier debugging.<br />
 
 # Tech stack 
 Python: The programming language used for the entire project.<br />
@@ -14,34 +21,29 @@ In addition to these, I am also using the requests library for making HTTP reque
 run this ```docker-compose up --build``` in the mail directory of the project where docker-compose.yml is present
 
 ## Task1
-### Problem Statement:
-1. Retrieve the financial data of Two given stocks (IBM, Apple Inc.)for the most recently two weeks. Please using an free API provider named [AlphaVantage](https://www.alphavantage.co/documentation/) 
-2. Process the raw API data response, a sample output after process should be like:
-```
-{
-    "symbol": "IBM",
-    "date": "2023-02-14",
-    "open_price": "153.08",
-    "close_price": "154.52",
-    "volume": "62199013",
-},
-{
-    "symbol": "IBM",
-    "date": "2023-02-13",
-    "open_price": "153.08",
-    "close_price": "154.52",
-    "volume": "59099013"
-},
-{
-    "symbol": "IBM",
-    "date": "2023-02-12",
-    "open_price": "153.08",
-    "close_price": "154.52",
-    "volume": "42399013"
-},
-...
-``` 
-3. Insert the records above into a table named `financial_data` in your local database, column name should be same as the processed data from step 2 above (symbol, date, open_price, close_price, volume) 
+This task will do the following: 
+1. fetch the data from  AlphaVantage API for specific stock symbols (IBM and Apple Inc.) for the last 2 weeks <br />
+2. process the data and insert it into the financial_data table
+
+### The way to use the API:
+```curl -X POST  'http://127.0.0.1:5004/api/fetch_data'```
+This was done as an API as it would make it easier for the evaluater to run the API multiple times tro check if the duplicate records are inserted into the DB
+
+## Task2
+
+### part 1
+ This task will do the following 
+ 1. retrieve records from financial_data table with paramentres **start_date**, **end_date**, **symbol**, **limit** and **page**  all the parametres are **optional** if limit is not given then the default values is taken to be 5 and if page is not given then the default values is taken to be 1.
+ 2. It will provide the data , pagination and info 
+#### The way to use the API:
+```curl -X GET 'http://localhost:5004/api/financial_data?start_date=2023-04-10&end_date=2023-04-14&page=1&limit=2'```
+
+
+
+
+
+
+ 
 
 
 ## Task2
