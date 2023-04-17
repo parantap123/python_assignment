@@ -117,6 +117,6 @@ This task will do the following : <br />
 
 # Secret Key storage explanation
 
-**Local** :In the local development environment, the API key is set up as an environment variable in the docker-compose.yml file. This approach ensures that the key is easily accessible during development while keeping it separate from the application code.<br />
-**Production** : In production, I will utilize AWS Secrets Manager to securely store and manage our API keys. This ensures that sensitive information is protected and can be easily rotated or updated as needed.
+**Local** :In the local development environment, the API key is set up as an **environment variable** in the docker-compose.yml file. This approach ensures that the key is easily accessible during development while keeping it separate from the application code.<br />
+**Production** : In production, I will utilize **AWS Secrets Manager** to securely store and manage our API keys. This ensures that sensitive information is protected and can be easily rotated or updated as needed.
 
