@@ -1,5 +1,5 @@
 # Description
-This project is a financial data analysis  application that retrieves stock market data from AlphaVantage API and stores it in a MySQL database. The application is built using Python and the Flask web framework. The application allows users to query the stored financial data through a set of RESTful APIs.
+This project is a financial data analysis  application that retrieves stock market data from AlphaVantage API and stores it in a MySQL database. The application is built using Python and the Flask web framework. The application allows users to query the stored financial data through a set of RESTful APIs. The API is containerized using Docker, making it easy to run and manage without needing to install any additional dependencies, except for Docker Engine itself.
 
 Key features of the project include:
 
@@ -8,17 +8,30 @@ Storage of the retrieved data in a MySQL database using Docker Compose for easy 
 Implementation of APIs to fetch financial data and perform statistical analysis within specified date ranges and stock symbols.<br />
 Error handling and logging to ensure smooth operation and easier debugging.<br />
 
+# Prerequisites
+1. **Docker Engine**
+
 # Tech stack 
-Python: The programming language used for the entire project.<br />
-Flask: A lightweight web framework for building API services in Python.<br />
-Flask-MySQLdb: A Flask extension that provides a simple interface for connecting to MySQL databases.<br />
-MySQL: The relational database management system used for storing data.<br />
-Docker: A platform for developing, shipping, and running applications in containers.<br />
-Docker Compose: A tool for defining and running multi-container Docker applications.<br />
+**Python** : The programming language used for the entire project.<br />
+**Flask**: A lightweight web framework for building API services in Python.<br />
+**Flask-MySQLdb**: A Flask extension that provides a simple interface for connecting to MySQL databases.<br />
+**MySQL**: The relational database management system used for storing data.<br />
+**Docker**: A platform for developing, shipping, and running applications in containers.<br />
+**Docker Compose**: A tool for defining and running multi-container Docker applications.<br />
 In addition to these, I am also using the requests library for making HTTP requests to the AlphaVantage API, and datetime for handling date and time operations.<br />
 
 # steps to run the code in the local enviroment
-run this ```docker-compose up --build``` in the mail directory of the project where docker-compose.yml is present
+
+To run the project, you don't need to install anything other than Docker Engine. Follow the steps below to run the project:
+
+1. Ensure that Docker Engine is installed on your system. If not, please refer to the official documentation to install Docker Engine. link to the website ``` https://docs.docker.com/engine/install/ ```
+2. Clone the repository to your local system.
+3. Open a terminal/command prompt and navigate to the project's root directory.
+4. Run the following command: ``` docker-compose up --build ```
+
+This command will build the necessary Docker images and start the services defined in the docker-compose.yml file. You don't need to worry about installing any other dependencies or setting up the environment, as Docker will handle everything for you.
+
+Once the containers are up and running, you can access the API at the specified endpoint (e.g., http://127.0.0.1:5004/api/fetch_data). For more information on using the API, please refer to the API documentation in the project.
 
 ## Task1
 This task will do the following: 
@@ -101,4 +114,9 @@ This task will do the following : <br />
     }
 }
 ```
+
+# Secret Key storage explanation
+
+**Local** :I am setting the key in the enviroment variables of the server<br />
+**Production** : Use secret management services provided by AWS Secrets Manager.It will protect access to our application API_KEY<br />
 
