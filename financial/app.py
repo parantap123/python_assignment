@@ -74,7 +74,11 @@ def get_financial_data():
         logger.info("correct type for page = " + str(page))
         
         limit = request.args.get('limit', default=5, type=int)
+        if(limit < 1):
+            raise Exception("the minimum value of the limit should be 1")
         page = request.args.get('page', default=1, type=int)
+        if(page < 1):
+            raise Exception("the minimum value of the page should be 1")
 
         (query,params) = get_financial_data_count_query_params(start_date,end_date,symbol)# this will get the query and the params required for that query to count the total number of records satisfying the query
         logger.info("query and params generated for  getting the financial_data total count")
