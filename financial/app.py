@@ -44,7 +44,7 @@ def get_data():
     logger.info("fetched the all data from API and inserted the data successfully into the financial_data table")
     return {"message":"data added successfully"}
 
-@app.route('/api/fetch_data')
+@app.route('/api/fetch_data', methods=['POST'])
 def fetch_data():
     data = get_data()
     return {"data":data}
